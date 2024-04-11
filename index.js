@@ -1,6 +1,6 @@
 
 //fetch posts and display them
-fetch("http://localhost:3000/posts")
+fetch("https://my-phase-1-project-9.onrender.com/posts")
   .then((response) => response.json())// Parse the response as JSON
   .then((posts) => {
     displayPosts(posts);// Call the displayPosts function to render the posts
@@ -51,7 +51,7 @@ function updateFormData(key, value) {
 //function to edit a post 
 function editPost(id) {
   // Fetch the post with the given id
-  fetch(`http://localhost:3000/posts/${id}`)
+  fetch(`https://my-phase-1-project-9.onrender.com/posts/${id}`)
   .then((response) => response.json())
     .then((post) => {
      // Populate form fields with post data for editing
@@ -116,7 +116,7 @@ function updatePost(event, id) {
 
   // Perform the update using fetch or any other method
   // Example fetch request:
-  fetch(`http://localhost:3000/posts/${id}`, {
+  fetch(`https://my-phase-1-project-9.onrender.com/posts/${id}`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({title: title,img: image,description1: description1,description2: description2,description3: description3,description4: description4,}),
@@ -151,7 +151,7 @@ document.addEventListener("input", function (event) {
 
 //Function to delete a post
 function deletePost(id) {
-  fetch(`http://localhost:3000/posts/${id}`, {
+  fetch(`https://my-phase-1-project-9.onrender.com/posts/${id}`, {
     method: "DELETE",
   })
     .then((anyvariable) => anyvariable.json())
@@ -174,7 +174,7 @@ document.getElementById("postForm").addEventListener("submit", (event) => {
   console.log(title,image,description1,description2,description3,description4
   );
 // Submit the form data to add a new post
-  fetch("http://localhost:3000/posts", {
+  fetch("https://my-phase-1-project-9.onrender.com/posts", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
